@@ -31,5 +31,5 @@ def go():
     for x in lis:
         print x[0]
     print
-    print "Total: %s"% (total.contents[0].contents[0])
+    print "Total: %s"% (total.contents[2].contents[0])
 go()
