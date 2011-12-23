@@ -1,0 +1,7 @@
+Use
+
+python scraper.py <language> <country_code>
+to get a list of jobs from linkedin.
+
+Eg:
+python scraper.py c++ in
