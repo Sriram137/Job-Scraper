@@ -1,4 +1,4 @@
-import urllib, urllib2, sys
+import urllib, urllib2, sys , json
 from BeautifulSoup import BeautifulSoup
 
 def get_job_list(language, country_code):
@@ -28,8 +28,15 @@ def go():
 
 
     (lis, total)= get_job_list(language, country_code)
+    dic = {}
     for x in lis:
-        print x[0]
-    print
-    print "Total: %s"% (total.contents[2].contents[0])
+        sp = x[0].split()
+        new1 = "".join(sp[:-1])
+        new2 = "".join(sp[-1])[1:-1]
+
+        dic[new1] = new2
+    dic["Total"] = total.contents[2].contents[0]
+
+    js = json.JSONEncoder().encode(dic)
+    print js
 go()
